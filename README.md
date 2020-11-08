@@ -13,13 +13,14 @@ for run-time.
 
 ### Results
 ```
+# JVM, syntax tree parsed from file.
 $ time java -cp ./target/wsp-aot-1.0-SNAPSHOT-jar-with-dependencies.jar MainKt
 ...
 real    0m0.189s
 user    0m0.367s
 sys     0m0.053s
 
-
+# Native, syntax tree embedded in executable.
 $ time ./wsp_aot
 ...
 real    0m0.010s
