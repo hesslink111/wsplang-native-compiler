@@ -14,6 +14,7 @@ for run-time.
 ### Results
 ```
 $ time java -cp ./target/wsp-aot-1.0-SNAPSHOT-jar-with-dependencies.jar MainKt
+...
 real    0m0.189s
 user    0m0.367s
 sys     0m0.053s
