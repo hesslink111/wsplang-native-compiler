@@ -1,9 +1,19 @@
 import java.io.File
+import type.WValue
+import source.WProgramParser
+import scope.WFunctionScope
 
 object Main {
-    val program: WProgram = WspParser.program.parse(File("input.wsp").readText())
+    val scope: WFunctionScope
+    val compiledCode: WValue
+    init {
+        scope = WFunctionScope()
+        val file = File("example.wsp")
+        compiledCode = WProgramParser(file.absolutePath).parseAsProgram(file.readText())
+                .eval(scope)
+    }
 }
 
 fun main(args: Array<String>) {
-    Main.program.eval()
+    Main.compiledCode.eval(Main.scope)
 }
